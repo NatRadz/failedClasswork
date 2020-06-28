@@ -1,13 +1,15 @@
 package oneLVTests;
 
 import core.BaseFunc;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pageObjects.HomePage;
 
 public class GrozsTest {
 
-    BaseFunc baseFunc = new BaseFunc();;
+    BaseFunc baseFunc = new BaseFunc();
+
 
     @Before
     public void navigateToSite() {
@@ -20,6 +22,11 @@ public class GrozsTest {
         HomePage homePage = new HomePage(baseFunc);
         homePage.selectMenuItem("Sports un fitness", "Velosipēdi");
 
+    }
+
+    @After
+    public void closeBrowser() {
+        baseFunc.closeBrowser();
     }
 
 }
